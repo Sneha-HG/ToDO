@@ -44,7 +44,7 @@
     <div class="todo-list">
       <transition-group name="list" tag="div">
         <div
-          v-for="todo in filteredTodos"
+          v-for="todo in filteredTodos" 
           :key="todo.id"
           class="todo-item"
           :class="{ completed: todo.completed }"
