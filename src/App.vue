@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <RouterView />
+     <!--  placeholder where route-matched components (like TodoApp.vue) are dynamically injected by the router -->
   </div>
 </template>
 
 <script setup>
+  <!-- compostion API syntax -->
 import { RouterView } from 'vue-router'
 </script>
 
