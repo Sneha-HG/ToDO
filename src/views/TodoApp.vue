@@ -48,7 +48,7 @@
           :key="todo.id"
           class="todo-item"
           :class="{ completed: todo.completed }"
-        >
+        > <!--adds completed cls only if it is true-->
           <div class="todo-content">
             <input
               type="checkbox"
@@ -126,7 +126,7 @@ const completedCount = computed(() => {
   return todos.value.filter(todo => todo.completed).length
 })
 
-// Count of pending tasks
+// Count of pending tasks by creating a computed property called pendingCount 
 const pendingCount = computed(() => {
   return todos.value.filter(todo => !todo.completed).length
 })
@@ -146,6 +146,8 @@ const emptyStateIcon = computed(() => {
 })
 
 // listens to changes in todos array when change happens this function triggers //
+  //first arg todos is reactive value being watched
+  //second arg newTodos is a fun that recevies new updated value 
 watch(todos, (newTodos) => {
   console.log('Todos changed:', newTodos.length)
 }, { deep: true }) // changes are also updated //
@@ -179,6 +181,8 @@ function deleteTodo(id) {
   //filters out todo with specific id creating new array without that todo
   saveTodos()
 }
+  // keeps only the todos whose id does NOT match the id we want to delete.
+
 
 function clearCompleted() {
   todos.value = todos.value.filter(todo => !todo.completed)
