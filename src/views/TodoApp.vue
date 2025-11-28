@@ -184,6 +184,8 @@ function clearCompleted() {
   todos.value = todos.value.filter(todo => !todo.completed)
   saveTodos()
 }
+  //keeps only those todos whose completed value is false.
+
 
 function saveTodos() {
   localStorage.setItem('vue-todos', JSON.stringify(todos.value))
